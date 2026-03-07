@@ -14,7 +14,7 @@ TextStyle getTextStyle({
   Color? backgroundColor,
   List<Shadow>? shadows,
 }) {
-  return GoogleFonts.cairo(
+  return GoogleFonts.roboto(
     fontSize: fontSize,
     fontWeight: fontWeight,
     color: color,
@@ -38,10 +38,9 @@ TextStyle headingStyle({Color color = Colors.black}) => getTextStyle(
 
 TextStyle subheadingStyle({Color color = Colors.black87}) => getTextStyle(
   fontSize: 20,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w400,
   color: color,
-  letterSpacing: 0.3,
-  height: 1.4,
+
 );
 
 
@@ -51,6 +50,13 @@ TextStyle bodyStyle({Color color = Colors.black87}) => getTextStyle(
   color: color,
   height: 1.6,
 );
+TextStyle textFieldStyle({Color color = Colors.black87}) => getTextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  color: color,
+
+);
+
 
 TextStyle captionStyle({Color color = Colors.grey}) => getTextStyle(
   fontSize: 12,
@@ -67,9 +73,9 @@ TextStyle buttonStyle({Color color = Colors.white}) => getTextStyle(
 
 TextStyle linkStyle({Color color = Colors.blue}) => getTextStyle(
   fontSize: 14,
-  fontWeight: FontWeight.normal,
+  fontWeight: FontWeight.w400,
+
   color: color,
-  decoration: TextDecoration.underline,
   decorationColor: color,
 );
 
