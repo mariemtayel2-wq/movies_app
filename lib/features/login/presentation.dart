@@ -96,7 +96,7 @@ return SafeArea(
                 TextButton(
                   onPressed: ()
                   {
-                    ///forget password
+                   context.pushRoute(ForgetPasswordRoute());
                   },
                   child: Text("Forget Password ?",
                     style:
