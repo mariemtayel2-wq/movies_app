@@ -1,10 +1,14 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/resources/assets_manager.dart';
 import 'package:movies_app/core/resources/color_manager.dart';
+import 'package:movies_app/core/resources/data_onBording.dart';
 import 'package:movies_app/core/resources/fontwieght_manager.dart';
 import 'package:movies_app/core/resources/textstyle_manager.dart';
+import 'package:movies_app/core/route_manger/app_router.dart';
 import 'package:movies_app/core/widget/elevetedbutton.dart';
+import 'package:movies_app/features/onBordingscreen/SharedPrefHelper.dart';
 
 @RoutePage()
 class OnBordingScreen extends StatefulWidget {
@@ -16,43 +20,12 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
   final PageController _pageController = PageController();
   int currentIndex = 0;
 
-  List<Map<String, String>> onboardingData = [
-    {
-      "image": AssetsManager.onBording1,
-      "title": "Find Your Next Favorite Movie Here",
-      "description":
-          "Get access to a huge library of movies to suit all tastes. You will surely like it",
-    },
-    {
-      "image": AssetsManager.onBording2,
-      "title": "Discover Movies",
-      "description":
-          "Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.",
-    },
-    {
-      "image": AssetsManager.onBording3,
-      "title": "Explore All Genres",
-      "description":
-          "Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.",
-    },
-    {
-      "image": AssetsManager.onBording4,
-      "title": "Create Watchlists",
-      "description":
-          "Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.",
-    },
-    {
-      "image": AssetsManager.onBording5,
-      "title": "Rate, Review, and Learn",
-      "description":
-          "Share your thoughts on the movies you've watched. Dive deep into film details and help others discover great movies with your reviews.",
-    },
-    {"image": AssetsManager.onBording6, "title": "Start Watching Now"},
-  ];
-
-  void _nextPage() {
+  final onboardingData = DataOnboarding.data;
+  void _nextPage() async {
     if (currentIndex == onboardingData.length - 1) {
-      print("Go to Home Screen");
+      await SharedPrefHelper.setOnboardingDone();
+      /// Navigate to login
+      context.router.replace(LoginRoute());
     } else {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 300),
