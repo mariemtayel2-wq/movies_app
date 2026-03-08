@@ -3,6 +3,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies_app/core/route_manger/app_router.dart';
 
 import '../../core/resources/assets_manager.dart';
 import '../../core/resources/color_manager.dart';
@@ -95,7 +96,7 @@ return SafeArea(
                 TextButton(
                   onPressed: ()
                   {
-                    ///forget password
+                   context.pushRoute(ForgetPasswordRoute());
                   },
                   child: Text("Forget Password ?",
                     style:
@@ -117,9 +118,10 @@ return SafeArea(
                 Text("Don’t Have Account ? ",style: linkStyle(color: ColorManager.primaryYello ) ,),
 
 
-                TextButton(onPressed: (){
-                  ///register screen
-
+                TextButton(
+                    onPressed: (){
+                      if (formkey.currentState!.validate()){
+                        context.pushRoute(RegisterRoute());}
                 }, child:Text("Create one",
                     style: linkStyle(color: ColorManager.primarywhite),) )
               ],
