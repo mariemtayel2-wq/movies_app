@@ -106,7 +106,7 @@ return SafeArea(
             Custumelevatedbutton(
 
                 onPressed:(){
-                  ///Home screen
+                 context.pushRoute(MainRoute());
                 },
                 backgroundcolor: ColorManager.primaryYello,
 

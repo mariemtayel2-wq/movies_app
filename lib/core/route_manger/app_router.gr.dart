@@ -99,6 +99,22 @@ class LoginRouteArgs {
 }
 
 /// generated route for
+/// [MainScreen]
+class MainRoute extends PageRouteInfo<void> {
+  const MainRoute({List<PageRouteInfo>? children})
+    : super(MainRoute.name, initialChildren: children);
+
+  static const String name = 'MainRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const MainScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [OnBordingScreen]
 class OnBordingRoute extends PageRouteInfo<void> {
   const OnBordingRoute({List<PageRouteInfo>? children})
@@ -109,7 +125,7 @@ class OnBordingRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return  OnBordingScreen();
+      return OnBordingScreen();
     },
   );
 }
