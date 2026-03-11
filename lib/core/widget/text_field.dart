@@ -1,71 +1,86 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/resources/color_manager.dart';
 
-typedef Validation= void Function(String? value);
-typedef Validator= String? Function(String? value);
+typedef Validation = void Function(String? value);
+typedef Validator = String? Function(String? value);
 
-class CustumTextFieled extends StatelessWidget{
+class CustumTextFieled extends StatefulWidget {
   CustumTextFieled({
+    this.obscureText = false,
     this.onchanged,
     this.controller,
     this.validator,
     super.key,
     this.borderside,
     this.suffixicon,
-    this.maxline
-    ,this.fillcolor,
+    this.maxline,
+    this.fillcolor,
     this.filled,
     this.hintstyle,
     this.hinttext,
     this.labelstyle,
     this.labeltext,
-    this.prefixicon});
+    this.prefixicon,
+  });
 
-
-  Color ?borderside;
-  Color?fillcolor;
+  Color? borderside;
+  Color? fillcolor;
   bool? filled;
-  String ?hinttext;
-  TextStyle ?hintstyle;
-  String ?labeltext;
-  TextStyle ?labelstyle;
+  String? hinttext;
+  TextStyle? hintstyle;
+  String? labeltext;
+  TextStyle? labelstyle;
   Widget? prefixicon;
-  Widget?suffixicon;
-  int ?maxline;
+  Widget? suffixicon;
+  int? maxline;
   Validation? onchanged;
   TextEditingController? controller;
   Validator? validator;
+  bool obscureText;
+
+  @override
+  State<CustumTextFieled> createState() => _CustumTextFieledState();
+}
+
+class _CustumTextFieledState extends State<CustumTextFieled> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: validator,
-      onChanged: onchanged,
-      controller: controller,
-      maxLines: maxline??1,
+      style: TextStyle(color: ColorManager.primarywhite),
+      obscureText: widget.obscureText,
+      validator: widget.validator,
+      onChanged: widget.onchanged,
+      controller: widget.controller,
+      maxLines: widget.maxline ?? 1,
       decoration: InputDecoration(
-        fillColor:fillcolor ,
-        filled: filled,
-        enabledBorder: builtdecorationborder(bordercolor:  borderside??Colors.transparent),
-        focusedBorder:  builtdecorationborder(bordercolor:  borderside??Colors.transparent),
-        errorBorder:  builtdecorationborder(bordercolor: ColorManager.primaryRed),
-        hintText: hinttext,
-        hintStyle: hintstyle,
-        labelText: labeltext,
-        labelStyle: labelstyle,
-        prefixIcon: prefixicon,
-        suffixIcon: suffixicon,
+        fillColor: widget.fillcolor,
+        filled: widget.filled,
+        enabledBorder: builtdecorationborder(
+          bordercolor: widget.borderside ?? Colors.transparent,
+        ),
+        focusedBorder: builtdecorationborder(
+          bordercolor: widget.borderside ?? Colors.transparent,
+        ),
+        errorBorder: builtdecorationborder(
+          bordercolor: ColorManager.primaryRed,
+        ),
+        hintText: widget.hinttext,
+        hintStyle: widget.hintstyle,
+        labelText: widget.labeltext,
+        labelStyle: widget.labelstyle,
+        prefixIcon: widget.prefixicon,
+        suffixIcon: widget.suffixicon,
       ),
     );
-
   }
-  OutlineInputBorder builtdecorationborder({required Color bordercolor})
-  {
-    return  OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),borderSide: BorderSide(
-        width: 2,color: borderside??Colors.transparent
-    )
+
+  OutlineInputBorder builtdecorationborder({required Color bordercolor}) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(16),
+      borderSide: BorderSide(
+        width: 2,
+        color: widget.borderside ?? Colors.transparent,
+      ),
     );
   }
 }
