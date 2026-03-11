@@ -8,4 +8,9 @@ abstract class ColorManager {
   static Color primaryblack = const Color(0xff121312);
   static Color primarywhite = const Color(0xffFFFFFF);
   static Color primaryRed = const Color(0xffe61f34);
+  static Color primarytarnsport=Colors.transparent;
+  static Color primarygray=Color(0xff121312B5);
+  static Color primarygrayprofile=Color(0xff212121);
+
+
 }

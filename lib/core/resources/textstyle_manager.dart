@@ -68,7 +68,6 @@ TextStyle buttonStyle({Color color = Colors.white}) => getTextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w600,
   color: color,
-  letterSpacing: 1.2,
 );
 
 TextStyle linkStyle({Color color = Colors.blue}) => getTextStyle(
@@ -126,9 +125,10 @@ TextStyle priceStyle({Color color = Colors.green}) => getTextStyle(
   letterSpacing: 0.5,
 );
 
-TextStyle strikeThroughStyle({Color color = Colors.grey}) => getTextStyle(
-  fontSize: 14,
+TextStyle sourceStyle({Color color = Colors.grey}) => getTextStyle(
+  fontSize: 20,
   color: color,
   decoration: TextDecoration.lineThrough,
   decorationColor: color,
+  fontWeight: FontWeight.bold
 );

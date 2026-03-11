@@ -7,8 +7,8 @@ import 'package:movies_app/features/homescreen/tabapages/ProfilePage.dart';
 class NavRoutes {
   static final List<Widget> pages = [
     Homepage(),
-    Browespage(),
-    Favoritespage(),
+    BrowesPage(),
+    FavoritesPage(),
     Profilepage(),
   ];
 }

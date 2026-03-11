@@ -11,6 +11,38 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [BrowesPage]
+class BrowesRoute extends PageRouteInfo<void> {
+  const BrowesRoute({List<PageRouteInfo>? children})
+    : super(BrowesRoute.name, initialChildren: children);
+
+  static const String name = 'BrowesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const BrowesPage();
+    },
+  );
+}
+
+/// generated route for
+/// [FavoritesPage]
+class FavoritesRoute extends PageRouteInfo<void> {
+  const FavoritesRoute({List<PageRouteInfo>? children})
+    : super(FavoritesRoute.name, initialChildren: children);
+
+  static const String name = 'FavoritesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const FavoritesPage();
+    },
+  );
+}
+
+/// generated route for
 /// [ForgetPasswordScreen]
 class ForgetPasswordRoute extends PageRouteInfo<ForgetPasswordRouteArgs> {
   ForgetPasswordRoute({Key? key, List<PageRouteInfo>? children})
@@ -52,6 +84,22 @@ class ForgetPasswordRouteArgs {
 
   @override
   int get hashCode => key.hashCode;
+}
+
+/// generated route for
+/// [Homepage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute ({List<PageRouteInfo>? children})
+    : super(HomeRoute .name, initialChildren: children);
+
+  static const String name = 'Homepage';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const Homepage();
+    },
+  );
 }
 
 /// generated route for
@@ -126,6 +174,22 @@ class OnBordingRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return OnBordingScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [Profilepage]
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+    : super(ProfileRoute.name, initialChildren: children);
+
+  static const String name = 'Profilepage';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const Profilepage();
     },
   );
 }

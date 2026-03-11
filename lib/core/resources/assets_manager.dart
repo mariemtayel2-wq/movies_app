@@ -10,5 +10,6 @@ abstract class AssetsManager {
   static const String register="assets/images/registerimage.png";
   static const String forgotpass="assets/images/forgetpass.png";
   static const String impatyimage="assets/images/imptyimage.png";
+  static const String launcericon="assets/images/launchericon.png";
 
 }

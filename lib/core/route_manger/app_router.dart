@@ -2,6 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/features/forget/forgetscreen.dart';
 import 'package:movies_app/features/homescreen/mainsreen.dart';
+import 'package:movies_app/features/homescreen/tabapages/BrowesPage.dart';
+import 'package:movies_app/features/homescreen/tabapages/FavoritesPage.dart';
+import 'package:movies_app/features/homescreen/tabapages/HomePage.dart';
+import 'package:movies_app/features/homescreen/tabapages/ProfilePage.dart';
 import 'package:movies_app/features/login/presentation.dart';
 import 'package:movies_app/features/onBordingscreen/presentation.dart';
 import 'package:movies_app/features/register/presentation.dart';
@@ -20,7 +24,11 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: RegisterRoute.page),
     AutoRoute(page: ForgetPasswordRoute.page),
     AutoRoute(page: MainRoute.page),
-    
+
+    AutoRoute(page: ProfileRoute.page),
+    AutoRoute(page: BrowesRoute.page),
+    AutoRoute(page: HomeRoute.page),
+    AutoRoute(page: FavoritesRoute.page),
 
   ];
 }
